@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "grpc-python-example"
+version = "0.1.0"
+description = ""
+authors = ["stanislav <stanislav.matveew@yandex.ru>"]
+readme = "README.md"
+packages = [{include = "grpc_python_example"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+grpcio = "^1.54.2"
+grpcio-tools = "^1.54.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

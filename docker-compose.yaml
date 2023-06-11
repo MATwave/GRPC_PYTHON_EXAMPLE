@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+
+  server:
+    build:
+      context: .
+    ports:
+      - "50051:50051"
+    networks:
+      - common_network
+
+  client:
+    build:
+      context: .
+    command: python src/client.py
+    depends_on:
+      - server
+    networks:
+      - common_network
+
+networks:
+  common_network:

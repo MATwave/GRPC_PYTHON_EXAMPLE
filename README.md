@@ -1,5 +1,10 @@
 # GRPC_PYTHON_EXAMPLE
 
+весь код можно запустить из Makefile
+```commandline
+make up
+```
+
 ___
 
 <details><summary>ДЛЯ РАЗРАБОТКИ</summary>
