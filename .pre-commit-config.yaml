@@ -1,0 +1,30 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: check-yaml               # Проверка синтаксиса YAML-файлов
+      - id: debug-statements         # Поиск отладочных инструкций в коде
+      - id: end-of-file-fixer        # Добавление символа конца файла
+      - id: trailing-whitespace      # Поиск и удаление лишних пробелов в конце строк
+        exclude: ^tests/fixtures/    # Исключение папки tests/fixtures/ из проверки
+
+  - repo: https://github.com/asottile/reorder-python-imports
+    rev: v3.9.0
+    hooks:
+      - id: reorder-python-imports                              # Порядок импортов: сортировка и группировка
+        args: [
+          --application-directories, '.',   # Директории, в которых происходит поиск импортов
+          --py38-plus                                           # Поддержка новых возможностей Python 3.8+
+        ]
+
+  - repo: https://github.com/asottile/pyupgrade
+    rev: v3.4.0
+    hooks:
+      - id: pyupgrade                 # Автоматическое обновление кода до более новых версий Python
+        args: [ --py38-plus ]         # Поддержка новых возможностей Python 3.8+
+
+  - repo: https://github.com/PyCQA/flake8
+    rev: 6.0.0
+    hooks:
+      - id: flake8                      # Статический анализ кода с использованием Flake8
+        args: [ --max-line-length=120 ] # Максимальная длина строки: 120 символов
